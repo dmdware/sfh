@@ -17,7 +17,7 @@
 #define VER_POST			0	//post-release number, or release candidate number, or hotfix?, local change only, should be compatible in multiplayer with other post-numbers
 #define APPVERSION				MakeVer(VER_MAJ, VER_FS, VER_ATT, VER_STAT, VER_POST)
 #else
-#define APPVERSION				1
+#define APPVERSION				28
 #endif
 
 #define CONFIGFILE			"config.ini"
