@@ -509,7 +509,7 @@ void DrawDeep(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, int32_t bas
 		texleft,textop,texright,texbottom);
 #endif
 #if 01
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 	//glBindFramebuffer(GL_FRAMEBUFFER, oldfb);
 
 	s = &g_shader[g_curS];
@@ -656,7 +656,7 @@ void DrawDeep2(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, uint32_t e
 #endif
 #if 01
 	//EndS();
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 	s = &g_shader[g_curS];
 	
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);

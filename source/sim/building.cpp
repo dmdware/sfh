@@ -1931,7 +1931,7 @@ void DrawBl(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderfb
 	}
 
 #if 1
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 	Shader* s = &g_shader[g_curS];
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
@@ -2024,7 +2024,7 @@ void DrawBl(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderfb
 		EndS();
 
 #ifndef ISOTOP
-		UseS(SHADER_DEEPTEAMELEV);
+		UseS(DEEPSHADER);
 #else
 		UseS(SHADER_ORTHO);
 #endif
@@ -2134,7 +2134,7 @@ void DrawBl(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderfb
 		glDrawArrays(GL_LINE_STRIP, 0, 3);
 
 #ifndef ISOTOP
-		UseS(SHADER_DEEPTEAMELEV);
+		UseS(DEEPSHADER);
 #else
 		UseS(SHADER_ORTHO);
 #endif
@@ -2169,7 +2169,7 @@ void DrawBl2(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderf
 	}
 
 #if 1
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 	Shader* s = &g_shader[g_curS];
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
@@ -2262,7 +2262,7 @@ void DrawBl2(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderf
 		EndS();
 
 #ifndef ISOTOP
-		UseS(SHADER_DEEPTEAMELEV);
+		UseS(DEEPSHADER);
 #else
 		UseS(SHADER_ORTHO);
 #endif
@@ -2377,7 +2377,7 @@ void DrawBl2(Building* b, float rendz, uint32_t renderdepthtex, uint32_t renderf
 		glDrawArrays(GL_LINE_STRIP, 0, 3);
 
 #ifndef ISOTOP
-		UseS(SHADER_DEEPTEAMELEV);
+		UseS(DEEPSHADER);
 #else
 		UseS(SHADER_ORTHO);
 #endif

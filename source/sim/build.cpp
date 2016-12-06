@@ -132,7 +132,7 @@ void DrawSBl(uint32_t renderdepthtex, uint32_t renderfb)
 	Shader* s = &g_shader[g_curS];
 
 #if 1
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 	s = &g_shader[g_curS];
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);

@@ -711,7 +711,7 @@ void DrawUnit(Unit* u, float rendz, uint32_t renderdepthtex, uint32_t renderfb)
 #ifdef ISOTOP
 		UseS(SHADER_ORTHO);
 #else
-		UseS(SHADER_DEEPTEAMELEV);
+		UseS(DEEPSHADER);
 #endif
 		s = &g_shader[g_curS];
 		glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);

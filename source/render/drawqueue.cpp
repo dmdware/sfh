@@ -115,7 +115,7 @@ void DrawQueue(uint32_t renderdepthtex, uint32_t renderfb)
 #ifdef ISOTOP
 	UseS(SHADER_ORTHO);
 #else
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 #endif
 	Shader* s = &g_shader[g_curS];
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
@@ -320,7 +320,7 @@ void DrawQueue(uint32_t renderdepthtex, uint32_t renderfb)
 #ifdef ISOTOP
 	UseS(SHADER_ORTHO);
 #else
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
 #endif
 	s = &g_shader[g_curS];
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
@@ -626,7 +626,14 @@ void DrawQueue(uint32_t renderdepthtex, uint32_t renderfb)
 			}
 		}
 #else
-	UseS(SHADER_DEEPTEAMELEV);
+	UseS(DEEPSHADER);
+	s = &g_shader[g_curS];
+	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
+	glUniform1f(s->slot[SSLOT_HEIGHT], (float)g_height);
+	glUniform1f(s->slot[SSLOT_MIND], (float)MIN_DISTANCE);
+	glUniform1f(s->slot[SSLOT_MAXD], (float)MAX_DISTANCE);
+	glUniform4f(s->slot[SSLOT_COLOR], 1, 1, 1, 1);
+	glUniform1f(s->slot[SSLOT_BASEELEV], 0);
 	//bl
 	for (int32_t bi = 0; bi < BUILDINGS; ++bi)
 	{
@@ -680,7 +687,7 @@ void DrawQueue(uint32_t renderdepthtex, uint32_t renderfb)
 	}
 	//cd
 
-	//UseS(SHADER_DEEPTEAMELEV);
+	//UseS(DEEPSHADER);
 
 	for (int32_t x = tmin.x; x <= tmax.x; x++)
 	{

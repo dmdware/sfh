@@ -145,6 +145,8 @@ public:
 
 #define SHADERS					26
 
+#define DEEPSHADER		SHADER_DEEPORTHO
+//#define DEEPSHADER	SHADER_DEEPTEAMELEV
 
 extern Shader g_shader[SHADERS];
 extern int32_t g_curS;
