@@ -1,0 +1,15 @@
+In addition to SDL2 and SDL2_net, you will need libjpeg-devel and libpng-devel.
+
+You need the build essentials / development tools of course.
+
+unixODBC and libgcrypt-devel are required to compile.
+
+
+
+If you get the error:
+
+./csmm: error while loading shared libraries: libSDL2-2.0.so.0: cannot open shar
+ed object file: No such file or directory
+
+The libs are in /usr/local/lib/ if you compiled from source. 
+Copy libSDL2_net-2.0.so.0 and libSDL2-2.0.so.0 to /usr/lib64/

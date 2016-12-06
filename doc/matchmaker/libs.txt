@@ -1,0 +1,3 @@
+In addition to SDL2 and SDL2_net, you will need libjpeg-devel and libpng-devel.
+
+You need the build essentials / development tools of course.

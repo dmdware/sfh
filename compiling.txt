@@ -1,0 +1,54 @@
+
+---
+
+Windows
+
+Requires visual studio 2012 with Windows XP build tools (visual studio 2012 service pack 1)
+
+proj/app/indneib.sln
+
+
+---
+
+Linux
+
+Requires CodeBlocks
+
+proj/app/indneib.cbp
+
+
+---
+
+Mac
+
+Requires XCode
+
+proj/app/xcode-mac/States, Firms, and Household.xcodeproj
+
+
+---
+
+Matchmaker
+
+Upload source/* and proj/match/* to linux server, cd to proj/match/,
+
+make clean
+make
+
+
+Then, to run:
+
+nohup ./csmm & 
+
+
+Then to stop (must be in proj/match/):
+
+touch stop
+
+
+To verify that it has stopped:
+
+tail log.txt
+
+
+---

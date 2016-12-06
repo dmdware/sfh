@@ -1,0 +1,4 @@
+Copyright (c) DMD 'Ware
+
+Distributed under zlib license
+

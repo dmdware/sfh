@@ -1,0 +1,19 @@
+memleak check:
+
+nohup valgrind --leak-check=yes ~/csmm/matchmaker/csmm > ~/csmm/matchmaker/valgrindtxt 2>&1 &
+
+nohup ./csmm &
+
+
+
+normal run:
+
+
+
+nohup ./csmm &
+
+
+
+to stop (must be in the same folder):
+
+touch stop
