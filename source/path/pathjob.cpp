@@ -26,7 +26,7 @@
 #include "pathdebug.h"
 #include "jpsexpansion.h"
 #include "../window.h"
-#include "mazepath.h"
+#include "partialpath.h"
 #include "partialpath.h"
 #include "../sim/transport.h"
 #include "astarpath.h"

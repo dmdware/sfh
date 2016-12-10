@@ -984,6 +984,19 @@ void DrawQueue(uint32_t renderdepthtex, uint32_t renderfb)
 	
 	StopTimer(TIMER_DRAWLIST);
 
+#ifndef ISOTOP
+	UseS(DEEPSHADER);
+#else
+	UseS(SHADER_ORTHO);
+#endif
+	s = &g_shader[g_curS];
+	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
+	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
+	glUniform1f(s->slot[SSLOT_HEIGHT], (float)g_height);
+#ifndef ISOTOP
+	glEnable(GL_DEPTH_TEST);
+#endif
+
 	DrawSBl(renderdepthtex, renderfb);
 
 #if 0

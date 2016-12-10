@@ -20,7 +20,7 @@
 #include "simflow.h"
 #include "../econ/utility.h"
 #include "../path/jpspath.h"
-#include "../path/mazepath.h"
+#include "../path/partialpath.h"
 #include "../path/tilepath.h"
 #include "../path/anypath.h"
 #include "../path/pathnode.h"
@@ -662,7 +662,7 @@ bool FindJob(Unit* u)
 		Vec2i subgoal;
 		UType* ut = &g_utype[u->type];
 
-		MazePath(u->type, j->jobtype, u->cmpos.x, u->cmpos.y,
+		PartialPath(u->type, j->jobtype, u->cmpos.x, u->cmpos.y,
 			j->target, j->target2, j->targtype, j->ctype, -1,
 			&path, &subgoal,
 			u, j->targu, j->targb,
@@ -1061,7 +1061,7 @@ void NewJob(int32_t jobtype, int32_t target, int32_t target2, int32_t cdtype)
 			Vec2i subgoal;
 			UType* ut = &g_utype[u->type];
 
-			MazePath(u->type, jobtype, u->cmpos.x, u->cmpos.y,
+			PartialPath(u->type, jobtype, u->cmpos.x, u->cmpos.y,
 					target, target2, targtype, cdtype, -1,
 					&path, &subgoal,
 					u, targu, targb,

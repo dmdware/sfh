@@ -30,8 +30,8 @@
 #include "../path/jpspath.h"
 #include "../path/jpspartpath.h"
 #include "../path/pathnode.h"
-#include "../path/mazepath.h"
-#include "../path/mazepath.h"
+#include "../path/partialpath.h"
+#include "../path/partialpath.h"
 #include "labourer.h"
 #include "../math/fixmath.h"
 #include "build.h"
@@ -237,7 +237,7 @@ void CheckPath(Unit* u)
 			const Vec2i noff = (u->goal - u->cmpos) / PATHNODE_SIZE;
 			int32_t nodesdist = PATHHEUR( noff );
 
-			MazePath(u->type, u->mode,
+			PartialPath(u->type, u->mode,
 			            u->cmpos.x, u->cmpos.y, u->target, u->target2, u->targtype, u->cdtype, u->supplier,
 						&u->path, &u->subgoal,
 			            u, NULL, NULL,
@@ -397,7 +397,7 @@ void CheckPath(Unit* u)
 
 			//To avoid slow-downs.
 			//MazePath(u->type, u->mode,
-			MazePath(u->type, u->mode,
+			PartialPath(u->type, u->mode,
 				u->cmpos.x, u->cmpos.y, u->target, u->target2, u->targtype, u->cdtype, u->supplier,
 				&u->path, &u->subgoal,
 				u, NULL, NULL,
@@ -405,7 +405,7 @@ void CheckPath(Unit* u)
 				u->goal.x, u->goal.y, u->goal.x, u->goal.y,
 				//nodesdist*nodesdist*1,
 				//TILE_SIZE*TILE_SIZE*20/PATHNODE_SIZE/PATHNODE_SIZE, 
-				/*nodesdist*/ TILE_SIZE*1/PATHNODE_SIZE,
+				nodesdist /*TILE_SIZE*1/PATHNODE_SIZE*/,
 				true, /*true*/ true);
 			//Enough to move 19 tiles around a corner, filled with obstacles.
 

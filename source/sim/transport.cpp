@@ -28,7 +28,7 @@
 #include "../path/jpspath.h"
 #include "../path/tilepath.h"
 #include "../path/astarpath.h"
-#include "../path/mazepath.h"
+#include "../path/partialpath.h"
 #include "../path/pathnode.h"
 #include "../platform.h"
 #include "truck.h"
@@ -787,7 +787,7 @@ void TBid(int32_t target, int32_t target2, int32_t targtype, int32_t umode, int3
 		Vec2i subgoal;
 		UType* ut = &g_utype[u->type];
 
-		MazePath(
+		PartialPath(
 			u->type, umode,
 			u->cmpos.x, u->cmpos.y,
 			target, target2, targtype, cdtype, j->supbi,
@@ -812,7 +812,7 @@ void TBid(int32_t target, int32_t target2, int32_t targtype, int32_t umode, int3
 		
 		path.clear();
 		
-		MazePath(
+		PartialPath(
 			u->type, UMODE_GOSUP,
 			u->cmpos.x, u->cmpos.y,
 			//target, target2, TARG_BL, cdtype,

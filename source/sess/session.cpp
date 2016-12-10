@@ -16,6 +16,7 @@
 #include "../gui/layouts/chattext.h"
 #include "../gui/layouts/messbox.h"
 #include "../gui/widgets/spez/svlist.h"
+#include "../gui/widgets/spez/saveview.h"
 #include "../net/download.h"
 #endif
 
@@ -42,7 +43,7 @@ void EndSess(bool switchmode)
 	if(g_downmap)
 	{
 		char maprelative[WF_MAX_PATH+1];
-		sprintf(maprelative, "maps/%s", g_downfile.c_str());
+		sprintf(maprelative, "%s%s", SAVEMODEPATH[SAVEMODE_MAPS], g_downfile.c_str());
 		char full[WF_MAX_PATH+1];
 		FullWritePath(maprelative, full);
 		unlink(full);

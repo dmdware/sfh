@@ -34,7 +34,7 @@
 #include "tilepath.h"
 #include "fillbodies.h"
 #include "../sim/simflow.h"
-#include "mazepath.h"
+#include "partialpath.h"
 
 //not engine
 #include "../gui/layouts/chattext.h"
@@ -438,7 +438,7 @@ void TilePath(int32_t utype, int32_t umode, int32_t cmstartx, int32_t cmstarty, 
 						std::list<Vec2i> subpath;
 						Vec2i subsubgoal;
 
-						MazePath(utype, umode, arrivedcm.x, arrivedcm.y,
+						PartialPath(utype, umode, arrivedcm.x, arrivedcm.y,
 							target, target2, targtype, cdtype, supplier,
 							&subpath, &subsubgoal, thisu, targu, targb,
 							pj->cmgoal.x, pj->cmgoal.y,
@@ -461,7 +461,7 @@ void TilePath(int32_t utype, int32_t umode, int32_t cmstartx, int32_t cmstarty, 
 					std::list<Vec2i> subpath;
 					Vec2i subsubgoal;
 
-					MazePath(utype, umode, arrivedcm.x, arrivedcm.y,
+					PartialPath(utype, umode, arrivedcm.x, arrivedcm.y,
 						target, target2, targtype, cdtype, supplier,
 						&subpath, &subsubgoal, thisu, targu, targb,
 						n2->x*TILE_SIZE+TILE_SIZE/2, n2->y*TILE_SIZE+TILE_SIZE/2,

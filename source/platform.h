@@ -6,7 +6,7 @@
 #define PLATFORM_H
 
 //#define MATCHMAKER		//uncomment this line for matchmaker server
-//#define USESTEAM			//uncomment this line for steam version
+#define USESTEAM			//uncomment this line for steam version
 //#define ADVERSION			//uncomment this line for the mobile version that's free but with ads
 
 #ifdef _WIN32

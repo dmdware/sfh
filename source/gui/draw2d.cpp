@@ -470,8 +470,8 @@ void DrawDeep(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, int32_t bas
 	
 	//make starting depth 0 in the bottom, high corner of the scrolled view area
 
-	GLint oldfb;
-	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &oldfb);
+	//GLint oldfb;
+	//glGetIntegerv(GL_FRAMEBUFFER_BINDING, &oldfb);
 
 	Vec3f ray, point;
 	IsoToCart(g_scroll + Vec2i(g_width,g_height), &ray, &point);
@@ -509,11 +509,12 @@ void DrawDeep(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, int32_t bas
 		texleft,textop,texright,texbottom);
 #endif
 #if 01
-	UseS(DEEPSHADER);
+	////UseS(DEEPSHADER);
 	//glBindFramebuffer(GL_FRAMEBUFFER, oldfb);
 
 	s = &g_shader[g_curS];
 	
+#if 0
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
 	glUniform1f(s->slot[SSLOT_HEIGHT], (float)g_height);
 	//glUniform1f(s->slot[SSLOT_WIDTH], (float)512);
@@ -521,6 +522,7 @@ void DrawDeep(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, int32_t bas
 	glUniform1f(s->slot[SSLOT_SCREENMAPWIDTH], (float)g_height);
 	glUniform1f(s->slot[SSLOT_SCREENMAPHEIGHT], (float)g_width);
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
+#endif
 	glUniform1f(s->slot[SSLOT_BASEDEPTH], basedepth - (speddepth + neardepth));
 	glUniform1f(s->slot[SSLOT_BASEELEV], baseelev);
 
@@ -616,8 +618,8 @@ void DrawDeep2(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, uint32_t e
 
 	//make starting depth 0 in the bottom, high corner of the scrolled view area
 
-	GLint oldfb;
-	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &oldfb);
+	//GLint oldfb;
+	//glGetIntegerv(GL_FRAMEBUFFER_BINDING, &oldfb);
 
 	Vec3f ray, point;
 	IsoToCart(g_scroll + Vec2i(g_width,g_height), &ray, &point);
@@ -654,7 +656,8 @@ void DrawDeep2(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, uint32_t e
 		left,top,right,bottom,
 		texleft,textop,texright,texbottom);
 #endif
-#if 01
+#if 001
+#if 0
 	//EndS();
 	UseS(DEEPSHADER);
 	s = &g_shader[g_curS];
@@ -666,6 +669,8 @@ void DrawDeep2(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, uint32_t e
 	glUniform1f(s->slot[SSLOT_SCREENMAPWIDTH], (float)g_height);
 	glUniform1f(s->slot[SSLOT_SCREENMAPHEIGHT], (float)g_width);
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
+#endif
+	s = &g_shader[g_curS];
 	glUniform1f(s->slot[SSLOT_BASEDEPTH], basedepth - (speddepth + neardepth));
 	glUniform1f(s->slot[SSLOT_BASEELEV], baseelev);
 	glUniform1f(s->slot[SSLOT_MIND], (float)MIN_DISTANCE);
@@ -683,9 +688,9 @@ void DrawDeep2(uint32_t difftex, uint32_t depthtex, uint32_t teamtex, uint32_t e
 	glBindTexture(GL_TEXTURE_2D, teamtex);
 	glUniform1i(s->slot[SSLOT_OWNERMAP], 2);
 	
-	glActiveTexture(GL_TEXTURE3);
-	glBindTexture(GL_TEXTURE_2D, elevtex);
-	glUniform1i(s->slot[SSLOT_ELEVMAP], 3);
+	////glActiveTexture(GL_TEXTURE3);
+	////glBindTexture(GL_TEXTURE_2D, elevtex);
+	////glUniform1i(s->slot[SSLOT_ELEVMAP], 3);
 
 #ifndef PLATFORM_MOBILE
 	glActiveTexture(GL_TEXTURE1);

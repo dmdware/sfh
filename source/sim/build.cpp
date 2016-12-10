@@ -132,7 +132,7 @@ void DrawSBl(uint32_t renderdepthtex, uint32_t renderfb)
 	Shader* s = &g_shader[g_curS];
 
 #if 1
-	UseS(DEEPSHADER);
+	//UseS(DEEPSHADER);
 	s = &g_shader[g_curS];
 	glUniform4f(s->slot[SSLOT_COLOR], 1.0f, 1.0f, 1.0f, 1.0f);
 	glUniform1f(s->slot[SSLOT_WIDTH], (float)g_width);
@@ -176,6 +176,7 @@ void DrawSBl(uint32_t renderdepthtex, uint32_t renderfb)
 		Texture* difftex = &g_texture[ sp->difftexi ];
 		Texture* depthtex = &g_texture[ sp->depthtexi ];
 		Texture* teamtex = &g_texture[ sp->teamtexi ];
+		Texture* elevtex = &g_texture[ sp->elevtexi ];
 
 		int32_t rendz;
 
@@ -189,7 +190,7 @@ void DrawSBl(uint32_t renderdepthtex, uint32_t renderfb)
 		sp->cropoff[2]/(float)difftex->width, sp->cropoff[3]/(float)difftex->height,
 		g_gui.m_crop);
 #else	
-		DrawDeep(difftex->texname, depthtex->texname, teamtex->texname, 
+		DrawDeep2(difftex->texname, depthtex->texname, teamtex->texname, elevtex->texname,
 			renderdepthtex, renderfb,
 			rendz, cmpos.z,
 			(float)screenpos.x + sp->cropoff[0],

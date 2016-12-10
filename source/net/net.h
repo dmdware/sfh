@@ -19,7 +19,7 @@
 
 #define PORT		50420
 #define NPORTS		1024
-#define SV_ADDR		"polyfrag.com"	//live server
+#define SV_ADDR		"23.226.230.153"	//live server
 //#define SV_ADDR			"23.226.224.175"		//vps
 //#define SV_ADDR		"54.221.229.124"	//corp1 aws
 //#define SV_ADDR			"192.168.1.100"		//home local server ip

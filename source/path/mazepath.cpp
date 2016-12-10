@@ -27,7 +27,7 @@
 #include "../sim/simdef.h"
 #include "../phys/trace.h"
 #include "../algo/binheap.h"
-#include "mazepath.h"
+#include "partialpath.h"
 #include "reconstructpath.h"
 #include "pathdebug.h"
 #include "../render/transaction.h"

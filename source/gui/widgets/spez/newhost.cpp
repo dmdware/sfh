@@ -44,6 +44,7 @@
 #include "../../../language.h"
 #include "roleview.h"
 #include "../../layouts/messbox.h"
+#include "saveview.h"
 
 //new host create button
 void Resize_NH_Create(Widget* w)
@@ -139,7 +140,7 @@ void Click_NH_Create()
 	strcpy(g_mapname, mapname.c_str());
 	
 	char maprelative[1024];
-	sprintf(maprelative, "maps/%s", mapname.c_str());
+	sprintf(maprelative, "%s%s", SAVEMODEPATH[SAVEMODE_MAPS], mapname.c_str());
 	
 	if(!LoadMap(maprelative))
 	{
@@ -252,7 +253,7 @@ void NewHost::regen()
 
 	std::list<std::string> files;
 	char full[WF_MAX_PATH+1];
-	FullWritePath("maps/", full);
+	FullWritePath(SAVEMODEPATH[SAVEMODE_MAPS], full);
 	ListFiles(full, files);
 
 	for(std::list<std::string>::iterator fit=files.begin(); fit!=files.end(); fit++)

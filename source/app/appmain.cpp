@@ -2946,7 +2946,7 @@ extern "C" void __cdecl SteamAPIDebugTextHook( int32_t nSeverity, const char *pc
 	::OutputDebugString( pchDebugText );
 #endif
 
-	if(!g_applog.is_open())
+	if(!g_applog)
 		OpenLog("log.txt", APPVERSION);
 
 	Log(pchDebugText);

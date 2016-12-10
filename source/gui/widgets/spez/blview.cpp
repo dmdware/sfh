@@ -730,7 +730,9 @@ void Click_BV_OpenGraphs()
 {
 	GUI *gui = &g_gui;
 	BlView *view = (BlView*)gui->get("bl view");
-	view->hide();
+	//doesn't hide now 2016/12/08
+	view->show();
+	view->regen(&g_sel);
 	BlGraphs *graphs = (BlGraphs*)gui->get("bl graphs");
 	gui->show("bl graphs");
 	graphs->regen(&g_sel);

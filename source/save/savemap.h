@@ -14,7 +14,7 @@
 #define SAVEMAP_H
 
 #define MAP_TAG			{'S','F','M'}
-#define MAP_VERSION		25
+#define MAP_VERSION		28
 
 float ConvertHeight(unsigned char brightness);
 void FreeMap();

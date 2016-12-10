@@ -2,7 +2,6 @@
 #ifndef EXPLOCRATER_H
 #define EXPLOCRATER_H
 
-#include "../phys/physics.h"
 #include "../math/vec3f.h"
 
 class EdMap;

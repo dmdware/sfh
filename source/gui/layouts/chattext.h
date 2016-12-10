@@ -21,7 +21,7 @@
 
 
 #define NOTIFTOP		(50)
-#define NOTIFBOTTOM	(NOTIFTOP+16*4)
+#define NOTIFBOTTOM	(NOTIFTOP+16*12)
 #define NOTIFRIGHT	(g_width*2/5)
 
 #define CHATTOP		(NOTIFBOTTOM+10)
